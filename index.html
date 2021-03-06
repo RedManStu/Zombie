@@ -44,9 +44,9 @@
                 center: {lat: -37.84225325763085, lng: 144.9828808659087}
             });
              if (navigator.geolocation) {
-               navigator.geolocation.getCurrentPosition(function (position) {
-               initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-               zombie_map.setCenter(initialLocation);
+                 navigator.geolocation.getCurrentPosition(function (position) {
+                     initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                     zombie_map.setCenter(initialLocation);
                  });
              }
             var old_position = new google.maps.Marker({
