@@ -40,8 +40,8 @@
         var markers = data.split("\n");
         function initMap() {         
             zombie_map = new google.maps.Map(document.getElementById('zombie_map'), {
-                zoom: 14,
-                center: {lat: -37.84225325763085, lng: 144.9828808659087}
+                zoom: 16,
+                center: {lat: -40.84225325763085, lng: 144.9828808659087}
             });
              if (navigator.geolocation) {
                  navigator.geolocation.getCurrentPosition(function (position) {
@@ -50,7 +50,7 @@
                  });
              }
             var old_position = new google.maps.Marker({
-                position: {lat: -37.84225325763085, lng: 144.9828808659087},
+                position: {lat: -40.84225325763085, lng: 144.9828808659087},
                 map: zombie_map
             });
             if(navigator.geolocation) {
