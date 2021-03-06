@@ -39,9 +39,21 @@
                     -37.84085 144.980897 weapons.png`;
         var markers = data.split("\n");
         function initMap() {
+           if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                var pos_start = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+            }
+            else {
+                alert("Geolocation doesn't work in your browser");
+            }                                           
+          
             zombie_map = new google.maps.Map(document.getElementById('zombie_map'), {
                 zoom: 14,
-                center: {lat: -37.84225325763085, lng: 144.9828808659087}
+                center: pos_start  
+              //center: {lat: -37.84225325763085, lng: 144.9828808659087}
             });
             var old_position = new google.maps.Marker({
                 position: {lat: -37.84225325763085, lng: 144.9828808659087},
@@ -79,7 +91,7 @@
           old_position = me;
           for(var i=0; i < all_markers.length; i++){
             var distance = google.maps.geometry.spherical.computeDistanceBetween(pos, all_markers[i].getPosition());
-            alert("Distance =" + distance);
+            //alert("Distance =" + distance);
             if( distance < tolerance ){
               var what_is_it = all_markers[i].getIcon();
               what_is_it = what_is_it.replace(".png", "");
