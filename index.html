@@ -42,11 +42,6 @@
                 zoom: 14,
                 center: {lat: -37.84225325763085, lng: 144.9828808659087}
             });
-            var old_position = new google.maps.Marker({
-                position: {lat: -37.84225325763085, lng: 144.9828808659087},
-                map: zombie_map,
-                icon: "player.png"
-            });
             if(navigator.geolocation) {
                 navigator.geolocation.watchPosition(set_my_position);
             }
@@ -67,15 +62,20 @@
                 });
                 all_markers.push(marker);
             }
+            var old_position = new google.maps.Marker({
+                position: {lat: -37.84225325763085, lng: 144.9828808659087},
+                map: zombie_map,
+                icon: "player.png"
+            });
         }
         function set_my_position(position){
+          old_position.setMap(null);  
           var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
           var marker = new google.maps.Marker({
                   position: pos,
                   map: zombie_map,
                   icon: "player.png"
             });
-          old_position.setMap(null);  
           old_position = marker;
         }
        
