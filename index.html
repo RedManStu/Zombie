@@ -16,7 +16,7 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIVTbsenN5kMn-lc4uiu5oe-Ty38RsA44&callback=initMap&libraries=geometry">
     </script>
   <body>
-    Items I wanto to appear on my page will go here
+    <b>Items I wanto to appear on my page will go here<b>
     <div id="zombie_map"></div>
         <form>
             Select an emoji
@@ -26,9 +26,7 @@
               <option value="weapons.png">Weapons</option>
             </select>
         </form>
-        <button type="button" id="setposition" onclick="setposition();">
-          Set your position
-        </button>
+        <input type="button" onclick="setposition();" value="Click Me!">
         <script>
         var zombie_map;
         var old_position;
