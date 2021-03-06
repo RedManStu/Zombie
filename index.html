@@ -26,6 +26,9 @@
               <option value="weapons.png">Weapons</option>
             </select>
         </form>
+        <button type="button" id="setposition" onclick="setposition();">
+          Set your position
+        </button>
         <script>
         var zombie_map;
         var old_position;
@@ -92,6 +95,12 @@
               alert("Found the " + what_is_it );
               all_markers[i].setMap(null);
             }
+          }
+          function setposition{
+          var marker = new google.maps.Marker({
+                  position: {lat: -37.84225325763085, lng: 144.9828808659087},
+                  map: zombie_map,
+                  icon: "player.png"          
           }
         }
        
