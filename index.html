@@ -98,16 +98,11 @@
             }
           }
           function setposition(){
-             if (navigator.geolocation) {
-                   navigator.geolocation.getCurrentPosition(function (position) {
-                       location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
                      var marker2 = new google.maps.Marker({
-                        position = location
+                        position = initialLocation
                         map: zombie_map,
                         icon: "weapons.png"          
                       });     
-                   });
-              }
            }   
         </script>
   </body>
