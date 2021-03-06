@@ -69,12 +69,12 @@
         function set_my_position(position){
           old_position.setMap(null);  
           var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-          marker = new google.maps.Marker({
+          var me = new google.maps.Marker({
                   position: pos,
                   map: zombie_map,
                   icon: "player.png"
             });
-          old_position = marker;
+          old_position = me;
         }
        
         </script>
