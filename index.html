@@ -29,6 +29,7 @@
         <script>
         var zombie_map;
         var old_position;
+        var marker;
         var all_markers = [];
         var data = `-37.84225 144.972880 zombie.png
                     -37.84525 144.959087 hospital.png
@@ -69,14 +70,14 @@
             });
         }
         function set_my_position(position){
-          old_position.setMap(null);  
+          marker.setMap(null);  
           var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-          var marker = new google.maps.Marker({
+          marker = new google.maps.Marker({
                   position: pos,
                   map: zombie_map,
                   icon: "player.png"
             });
-          old_position = marker;
+          //old_position = marker;
         }
        
         </script>
