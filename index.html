@@ -27,7 +27,7 @@
             </select>
         </form>
         <button type="button" onclick="setposition()">
-         Position 2
+         Position 1
         </button>
         <script>
         var zombie_map;
@@ -62,6 +62,11 @@
             else {
                 alert("Geolocation doesn't work in your browser");
             }
+            if (navigator.geolocation) {
+                 navigator.geolocation.watchPosition(function (position) {
+                     location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                 });
+             }
             for(var i=0; i < markers.length; i++){
                 var marker_data = markers[i].trim();
                 marker_data = marker_data.split(" ");
@@ -98,16 +103,11 @@
             }
           }
           function setposition(){                 
-            if (navigator.geolocation) {
-                 navigator.geolocation.getCurrentPosition(function (position) {
-                 location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-             });
             var marker2 = new google.maps.Marker({
                         position: location,
                         map: zombie_map,
                         icon: "weapons.png"          
              }); 
-            }
            }   
         </script>
   </body>
