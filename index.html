@@ -27,7 +27,7 @@
             </select>
         </form>
         <button type="button" onclick="setposition()">
-         Press me!
+         Set Position
         </button>
         <script>
         var zombie_map;
@@ -94,17 +94,16 @@
               what_is_it = what_is_it.replace(".png", "");
               alert("Found the " + what_is_it );
               all_markers[i].setMap(null);
+              }
             }
           }
           function setposition(){
-            var marker = new google.maps.Marker({
+            var marker2 = new google.maps.Marker({
                     position: {lat: -37.84225325763085, lng: 144.9828808659087},
                     map: zombie_map,
                     icon: "player.png"          
              });
-           }
-        }
-       
+           }   
         </script>
   </body>
 </html>
