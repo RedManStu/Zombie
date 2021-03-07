@@ -106,7 +106,7 @@
             if (navigator.geolocation) {
               navigator.geolocation.getCurrentPosition(function (position) {
                      x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
-                     
+                    }); 
             } else { 
               alert("Geolocation doesn't work in your browser");
             }
