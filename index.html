@@ -29,8 +29,10 @@
         <button type="button" onclick="getLocation()">
          Position 1
         </button>
+        <p id="demo"></p>
         <script>
         var zombie_map;
+        var x = document.getElementById("demo");
         var old_position;
         var tolerance = 10;
         var all_markers = [];
@@ -105,6 +107,7 @@
             }
           }
           function setposition(positon){                 
+            x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
             var pos2 = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             var marker2 = new google.maps.Marker({
                         position: pos2,
