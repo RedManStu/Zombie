@@ -27,7 +27,7 @@
             </select>
         </form>
         <button type="button" onclick="setposition()">
-         Position 1
+         Position 2
         </button>
         <script>
         var zombie_map;
@@ -58,14 +58,11 @@
             });
             if(navigator.geolocation) {
                 navigator.geolocation.watchPosition(set_my_position);
+                navigator.geolocation.watchPosition(setposition);
             }
             else {
                 alert("Geolocation doesn't work in your browser");
             }
-            if(navigator.geolocation) {
-                navigator.geolocation.watchPosition(setposition);
-                 });
-             }
             for(var i=0; i < markers.length; i++){
                 var marker_data = markers[i].trim();
                 marker_data = marker_data.split(" ");
