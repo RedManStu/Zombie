@@ -58,7 +58,6 @@
             });
             if(navigator.geolocation) {
                 navigator.geolocation.watchPosition(set_my_position);
-                navigator.geolocation.watchPosition(setposition);
             }
             else {
                 alert("Geolocation doesn't work in your browser");
@@ -98,10 +97,10 @@
               }
             }
           }
-          function setposition(position){                 
-            var pos2 = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+          function setposition(){                 
+            //var pos2 = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             var marker2 = new google.maps.Marker({
-                        position: pos2,
+                        position: initialLocation,
                         map: zombie_map,
                         icon: "weapons.png"          
              }); 
