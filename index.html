@@ -29,7 +29,7 @@
         <button type="button" onclick="getLocation()">
          Position 1
         </button>
-        <p id="demo"></p>
+        <p id="demo">Test</p>
         <script>
         var zombie_map;
         var x = document.getElementById("demo");
@@ -58,12 +58,6 @@
                 position: {lat: -40.84225325763085, lng: 144.9828808659087},
                 map: zombie_map
             });
-            if(navigator.geolocation) {
-                navigator.geolocation.watchPosition(set_my_position);
-            }
-            else {
-                alert("Geolocation doesn't work in your browser");
-            }
             for(var i=0; i < markers.length; i++){
                 var marker_data = markers[i].trim();
                 marker_data = marker_data.split(" ");
