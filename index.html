@@ -26,10 +26,13 @@
               <option value="weapons.png">Weapons</option>
             </select>
         </form>
-        <button type="button" onclick="getLocation()">
+        <button type="button" onclick="setposition()">
          Position 1
         </button>
-        <p id="demo">Test 2</p>
+        <button type="button" onclick="getLocation()">
+         Position 2
+        </button>
+        <p id="demo">Test 3</p>
         <script>
         var zombie_map;
         var x = document.getElementById("demo");
@@ -101,13 +104,15 @@
           }
           function getLocation() {
             if (navigator.geolocation) {
-              navigator.geolocation.getCurrentPosition(setposition);
+              navigator.geolocation.getCurrentPosition(function (position) {
+                     x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+                     
             } else { 
               alert("Geolocation doesn't work in your browser");
             }
           }
-          function setposition(positon){                 
-            x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+          function setposition(){                 
+            x.innerHTML = "Latitude: " ;
             //var pos2 = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             //var marker2 = new google.maps.Marker({
             //            position: pos2,
